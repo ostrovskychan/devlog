@@ -1,0 +1,14 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Devlog\\PHPStan\\": "rules/custom-rules/"
+        }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.2",
+        "shipmonk/phpstan-rules": "^4.4",
+        "tomasvotruba/unused-public": "^2.2",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "spaze/phpstan-disallowed-calls": "^4.14"
+    }
+}

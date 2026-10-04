@@ -1,0 +1,7 @@
+{
+    "scan-files": [
+        "public/*.php"
+    ],
+    "symbol-whitelist": [
+    ]
+}

@@ -1,0 +1,17 @@
+
+parametersSchema:
+    domainPrivateSetProperties: structure([
+        sourceDirectory: schema(string(), nullable())
+    ])
+
+parameters:
+    domainPrivateSetProperties:
+        sourceDirectory: null
+
+services:
+    -
+        class: Devlog\PHPStan\UnusedDomainPrivateSetPropertyExtension
+        arguments:
+            sourceDirectory: %domainPrivateSetProperties.sourceDirectory%
+        tags:
+            - phpstan.ignoreErrorExtension

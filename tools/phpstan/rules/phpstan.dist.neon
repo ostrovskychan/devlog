@@ -1,0 +1,27 @@
+parameters:
+    level: 10
+    paths:
+        - ../../../public
+
+includes:
+    - phpstan-disallowed.neon
+
+    - ../vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
+    - ../vendor/phpstan/phpstan-strict-rules/rules.neon
+    - ../vendor/shipmonk/phpstan-rules/rules.neon
+
+    - ../vendor/spaze/phpstan-disallowed-calls/extension.neon
+    - ../vendor/spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
+    - ../vendor/spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
+    - ../vendor/spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
+    - ../vendor/spaze/phpstan-disallowed-calls/disallowed-non-timing-safe-calls.neon
+
+    - ../vendor/tomasvotruba/unused-public/config/extension.neon
+
+    - custom-rules/extension.neon
+
+
+
+
+

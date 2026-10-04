@@ -1,0 +1,52 @@
+{
+    "require": {
+        "php": "^8.5",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.8"
+    },
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "^1.9"
+    },
+    "config": {
+        "allow-plugins": {
+            "bamarni/composer-bin-plugin": true
+        }
+    },
+    "extra": {
+        "bamarni-bin": {
+            "bin-links": true,
+            "forward-command": true,
+            "target-directory": "tools"
+        }
+    },
+    "scripts": {
+        "linters:check": [
+            "@phpstan:check",
+            "@composer:requirements:check",
+            "@cs-fixer:check",
+            "@rector:check"
+        ],
+        "linters:run": [
+            "@cs-fixer:fix",
+            "@rector:fix"
+        ],
+        "cs-fixer:check": [
+            "vendor/bin/php-cs-fixer check -v --diff --ansi --config=tools/cs-fixer/rules/rules.php"
+        ],
+        "cs-fixer:fix": [
+            "vendor/bin/php-cs-fixer fix --ansi --config=tools/cs-fixer/rules/rules.php"
+        ],
+        "phpstan:check": [
+            "vendor/bin/phpstan analyse --configuration=tools/phpstan/rules/phpstan.dist.neon --memory-limit=-1"
+        ],
+        "rector:check": [
+            "vendor/bin/rector process --config=tools/rector/rules/rector.php --dry-run --ansi"
+        ],
+        "rector:fix": [
+            "vendor/bin/rector process --config=tools/rector/rules/rector.php --ansi"
+        ],
+        "composer:requirements:check": [
+            "vendor/bin/composer-require-checker --config-file=tools/requirements-checker/rules/rules.json check composer.json"
+        ]
+    }
+}

@@ -1,0 +1,75 @@
+parameters:
+    disallowedFunctionCalls:
+        # Disallowed language constructs
+        -
+            function: 'print'
+            message: 'Avoid using print, return a PSR-7 Response or use a logger instead'
+        -
+            function: 'echo'
+            message: 'Avoid using echo, return a PSR-7 Response or use a logger instead'
+        -
+            function: 'empty'
+            message: 'Avoid using empty, use explicit checks (=== null, === "", === []) instead'
+        -
+            function: 'assert'
+            message: 'Avoid using assert, prefer test instead'
+
+        # Debugging and dumps
+        -
+            function: 'dd()'
+            message: 'Avoid using dd, remove it before commit'
+        -
+            function: 'dump()'
+            message: 'Avoid using dump, remove it before commit'
+        -
+            function: 'var_dump()'
+            message: 'Avoid using var_dump, use PSR loggers instead'
+        -
+            function: 'print_r()'
+            message: 'Avoid using print_r, use PSR loggers instead'
+        -
+            function: 'var_export()'
+            message: 'Avoid using var_export, use PSR loggers or serializers instead'
+        -
+            function: 'debug_print_backtrace()'
+            message: 'Avoid using debug_print_backtrace, use Throwable::getTraceAsString() in loggers instead'
+
+        # Unexpected interrupts
+        -
+            function: 'exit()'
+            message: 'Avoid using exit, throw exceptions instead'
+        -
+            function: 'die()'
+            message: 'Avoid using die, throw exceptions instead'
+
+        # Dangerous scope modification
+        -
+            function: 'extract()'
+            message: 'Avoid using extract, import variables explicitly instead'
+
+        # Process execution delays
+        -
+            function: 'sleep()'
+            message: 'Avoid using sleep, use job queues or async logic instead'
+        -
+            function: 'usleep()'
+            message: 'Avoid using usleep, use job queues or async logic instead'
+
+        # Date and time calls (untestable side effects)
+        -
+            function: 'date()'
+            message: 'Avoid using date, use DateTimeImmutable or ClockInterface (PSR-20) instead'
+        -
+            function: 'time()'
+            message: 'Avoid using time, use DateTimeImmutable or ClockInterface (PSR-20) instead'
+        -
+            function: 'strtotime()'
+            message: 'Avoid using strtotime, use DateTimeImmutable instead'
+
+        # Global runtime environment modifications
+        -
+            function: 'putenv()'
+            message: 'Avoid using putenv, set environment variables at server level instead'
+        -
+            function: 'ini_set()'
+            message: 'Avoid using ini_set, configure php.ini or environment settings instead'

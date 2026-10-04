@@ -1,0 +1,11 @@
+# idea:
+/.idea/
+
+# cache:
+*cache
+/runtime/
+
+# dependencies:
+/vendor/
+tools/*/vendor
+
