@@ -19,6 +19,11 @@
             "target-directory": "tools"
         }
     },
+    "autoload": {
+        "psr-4": {
+            "Gateways\\": "src/Gateway"
+        }
+    },
     "scripts": {
         "linters:check": [
             "@phpstan:check",

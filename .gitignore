@@ -7,5 +7,4 @@
 
 # dependencies:
 /vendor/
-tools/*/vendor
-
+tools/*/vendor/
