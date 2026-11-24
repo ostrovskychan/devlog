@@ -1,4 +1,7 @@
 {
+    "name": "ostrovskychan/devlog",
+    "description": "Devlog application",
+    "license": "proprietary",
     "require": {
         "php": "^8.5",
         "slim/slim": "4.*",
